@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư — Sữa Hạt Nhà Mình</title>
+<meta name="description" content="Chính sách quyền riêng tư của ứng dụng Auto Sữa Hạt và Fanpage Facebook Sữa Hạt Nhà Mình. Cách chúng tôi truy cập, sử dụng và bảo vệ dữ liệu.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101513" media="(prefers-color-scheme: dark)">
+<!--
+  Trang chính sách quyền riêng tư cho Meta App Review.
+  Sửa nhanh: tên thương hiệu, tên ứng dụng, email/số điện thoại ở phần Liên hệ.
+  Không cần build, không phụ thuộc thư viện ngoài.
+-->
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f7f3ec;
+    --surface: #fffdf8;
+    --surface-2: #f0eade;
+    --ink: #1d2621;
+    --ink-soft: #47534b;
+    --muted: #6d786f;
+    --line: #e2dbcf;
+    --accent: #3f6b4a;
+    --accent-ink: #234a2d;
+    --callout-bg: #e9f1e9;
+    --callout-border: #cfe0d1;
+    --callout-ink: #234a2d;
+    --topbar-bg: rgba(247, 243, 236, 0.88);
+    --shadow: 0 1px 2px rgba(29, 38, 33, 0.05), 0 18px 44px -24px rgba(29, 38, 33, 0.28);
+    --max: 800px;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #101513;
+      --surface: #161d1a;
+      --surface-2: #1c2521;
+      --ink: #e9ece8;
+      --ink-soft: #b9c2bc;
+      --muted: #8d9a92;
+      --line: #2a352f;
+      --accent: #9fc9a7;
+      --accent-ink: #c9e6cf;
+      --callout-bg: #17241b;
+      --callout-border: #2c4533;
+      --callout-ink: #c9e6cf;
+      --topbar-bg: rgba(16, 21, 19, 0.88);
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 44px -24px rgba(0, 0, 0, 0.65);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(60rem 28rem at 80% -8%, rgba(120, 160, 120, 0.13), transparent 60%),
+      radial-gradient(42rem 24rem at 5% 4%, rgba(210, 190, 150, 0.14), transparent 60%);
+  }
+  @media (prefers-color-scheme: dark) {
+    body::before { opacity: 0.55; }
+  }
+
+  .wrap { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+  .skip {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    z-index: 50;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: top 0.15s ease;
+  }
+  .skip:focus { top: 12px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  [hidden] { display: none !important; }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--topbar-bg);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 62px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    font-size: 0.98rem;
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--callout-bg);
+    color: var(--accent);
+    border: 1px solid var(--callout-border);
+    flex: none;
+  }
+  .lang {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    flex: none;
+  }
+  .lang button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    line-height: 1.4;
+  }
+  .lang button[aria-pressed="true"] {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .hero { padding: 68px 0 30px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+  h1 {
+    margin: 0 0 18px;
+    font-family: var(--serif);
+    font-size: clamp(2.05rem, 5.2vw, 3.05rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+  .lede {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+  }
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+  .doc-meta li { display: inline-flex; align-items: center; gap: 8px; }
+  .doc-meta li + li::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  .summary {
+    margin: 10px 0 44px;
+    padding: 26px 28px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    box-shadow: var(--shadow);
+  }
+  .summary h2 {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .summary ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 11px;
+  }
+  .summary li {
+    position: relative;
+    padding-left: 30px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+  }
+  .summary li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--callout-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233f6b4a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
+    border: 1px solid var(--callout-border);
+  }
+  @media (prefers-color-scheme: dark) {
+    .summary li::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239fc9a7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    }
+  }
+
+  section {
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 84px;
+  }
+  section:first-of-type { border-top: 0; padding-top: 6px; }
+  h2 {
+    margin: 0 0 14px;
+    font-family: var(--serif);
+    font-size: 1.42rem;
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+  h3 {
+    margin: 26px 0 8px;
+    font-size: 1.01rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  h3:first-of-type { margin-top: 18px; }
+  p, ul, ol { margin: 0 0 1em; }
+  p:last-child, ul:last-child, ol:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 1.3em; }
+  li { margin: 0.32em 0; }
+  li::marker { color: var(--muted); }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-ink); }
+  strong { font-weight: 680; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.87em;
+    padding: 0.12em 0.38em;
+    border-radius: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    white-space: nowrap;
+  }
+
+  .callout {
+    display: flex;
+    gap: 14px;
+    margin: 18px 0;
+    padding: 18px 20px;
+    border: 1px solid var(--callout-border);
+    border-radius: 14px;
+    background: var(--callout-bg);
+    color: var(--callout-ink);
+    font-size: 0.96rem;
+  }
+  .callout svg { flex: none; margin-top: 0.18em; }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 0.55em; }
+
+  .table-wrap {
+    margin: 18px 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  th, td {
+    padding: 13px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 620; white-space: nowrap; }
+
+  .contact-card {
+    margin-top: 18px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+  }
+  .contact-card dl { margin: 0; display: grid; gap: 12px; }
+  .contact-card div { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  .contact-card dt {
+    min-width: 92px;
+    color: var(--muted);
+    font-size: 0.86rem;
+    font-weight: 620;
+  }
+  .contact-card dd { margin: 0; font-weight: 560; }
+
+  .page-footer {
+    margin-top: 30px;
+    padding: 28px 0 54px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.84rem;
+  }
+  .page-footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 24px;
+  }
+  .page-footer a { color: var(--muted); }
+  .to-top { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+  .to-top:hover { color: var(--accent); }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { width: min(100% - 32px, var(--max)); }
+    .hero { padding-top: 46px; }
+    .summary { padding: 22px 20px; }
+    .doc-meta { display: grid; gap: 4px; }
+    .doc-meta li + li::before { display: none; }
+    .contact-card { padding: 20px; }
+    .contact-card dt { min-width: 100%; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; font-size: 11.5pt; }
+    body::before, .topbar, .to-top { display: none !important; }
+    .hero { padding-top: 0; }
+    .summary, .contact-card, .table-wrap { box-shadow: none; }
+    section { break-inside: avoid; }
+    a { color: inherit; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua điều hướng / Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#main">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-6-6.5-6-10a6 6 0 0 1 12 0c0 3.5-2 7-6 10Z"/><path d="M12 21V9"/><path d="M12 13c1.6-.4 2.8-1.3 3.5-2.6"/></svg>
+      </span>
+      Sữa Hạt Nhà Mình
+    </a>
+    <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+      <button type="button" data-lang="vi" aria-pressed="true" aria-label="Tiếng Việt">VI</button>
+      <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <!-- ============================== TIẾNG VIỆT ============================== -->
+  <article lang="vi" data-doc="vi">
+    <div class="hero">
+      <p class="eyebrow">Sữa Hạt Nhà Mình · Tài liệu pháp lý</p>
+      <h1>Chính sách quyền riêng tư</h1>
+      <p class="lede">
+        Cách ứng dụng <strong>Auto Sữa Hạt</strong> truy cập, sử dụng và bảo vệ dữ liệu
+        khi đăng bài lên Fanpage Facebook của Sữa Hạt Nhà Mình.
+      </p>
+      <ul class="doc-meta">
+        <li>Cập nhật: 08/11/2026</li>
+        <li>Phiên bản 1.0</li>
+        <li>Áp dụng cho: Fanpage &amp; ứng dụng Auto Sữa Hạt</li>
+      </ul>
+    </div>
+
+    <div class="summary">
+      <h2>Tóm tắt trong 30 giây</h2>
+      <ul>
+        <li>Chúng tôi dùng một công cụ nội bộ để đăng bài lên Fanpage của <strong>chính mình</strong>.</li>
+        <li>Không thu thập dữ liệu cá nhân của người xem, người theo dõi hay khách hàng.</li>
+        <li>Không dùng cookie, không analytics, không bán hoặc chia sẻ dữ liệu để quảng cáo.</li>
+        <li>Dữ liệu vận hành nằm trên máy tính của chủ cửa hàng; token được giữ kín.</li>
+      </ul>
+    </div>
+
+    <section id="gioi-thieu">
+      <h2>1. Giới thiệu</h2>
+      <p>
+        <strong>Sữa Hạt Nhà Mình</strong> (“chúng tôi”) là cửa hàng nhỏ tại Việt Nam, vận hành
+        Fanpage Facebook cùng tên và một công cụ nội bộ có tên <strong>Auto Sữa Hạt</strong>
+        (“Ứng dụng”). Ứng dụng tạo ảnh và nội dung giới thiệu sản phẩm, sau đó tự động đăng một bài
+        gồm nhiều ảnh lên Fanpage của chúng tôi thông qua Meta Graph API.
+      </p>
+      <p>
+        Chính sách này giải thích chúng tôi truy cập, sử dụng, lưu trữ và bảo vệ dữ liệu như thế nào.
+        Chúng tôi tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân (Việt Nam) và các điều khoản
+        nền tảng của Meta.
+      </p>
+    </section>
+
+    <section id="pham-vi">
+      <h2>2. Phạm vi áp dụng</h2>
+      <p>Chính sách này áp dụng cho:</p>
+      <ul>
+        <li>Fanpage Facebook <strong>Sữa Hạt Nhà Mình</strong> và các bài đăng trên đó.</li>
+        <li>Ứng dụng Auto Sữa Hạt, chạy cục bộ trên máy tính của chủ cửa hàng.</li>
+        <li>Trang chính sách này và dữ liệu kỹ thuật phát sinh khi bạn truy cập trang.</li>
+      </ul>
+      <p>
+        Chính sách không áp dụng cho các trang web, ứng dụng hoặc dịch vụ khác mà chúng tôi không
+        kiểm soát, kể cả các nền tảng của bên thứ ba được nhắc đến bên dưới.
+      </p>
+    </section>
+
+    <section id="du-lieu">
+      <h2>3. Dữ liệu chúng tôi xử lý</h2>
+
+      <h3>3.1. Dữ liệu về Fanpage do chúng tôi quản lý</h3>
+      <ul>
+        <li><strong>ID và tên Fanpage</strong> — để xác định đúng trang cần đăng bài.</li>
+        <li><strong>Page access token</strong> — thông tin xác thực do Meta cấp, lưu cục bộ trong tệp
+          <code>.env</code>, không công bố và không chia sẻ.</li>
+        <li><strong>Nhật ký đăng bài</strong> — ID bài đăng, thời điểm, trạng thái, ID ảnh đã tải lên
+          và danh sách sản phẩm của mỗi bài, lưu trong <code>state/posts.jsonl</code> để đếm
+          giới hạn bài/ngày và tránh đăng trùng.</li>
+        <li><strong>Nội dung sản phẩm</strong> — tên, nguyên liệu, giá, mô tả và lời kêu gọi do chúng tôi
+          tự soạn trong <code>products.yaml</code>.</li>
+        <li><strong>Ảnh sản phẩm</strong> — do chúng tôi tạo hoặc sở hữu, lưu trong thư mục
+          <code>output/images/</code>.</li>
+      </ul>
+
+      <h3>3.2. Dữ liệu của người xem và khách hàng</h3>
+      <div class="callout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p>
+          Ứng dụng <strong>không</strong> đọc, thu thập hay lưu dữ liệu cá nhân của người xem,
+          người theo dõi, người bình luận hoặc người nhắn tin cho Fanpage.
+        </p>
+      </div>
+      <p>
+        Các tương tác như bình luận, thả cảm xúc, chia sẻ hay tin nhắn diễn ra trên nền tảng Facebook
+        và chịu sự điều chỉnh của chính sách Meta. Ứng dụng chỉ sử dụng hai quyền:
+        <code>pages_manage_posts</code> (đăng bài) và <code>pages_read_engagement</code> (đọc thông tin
+        công khai của trang). Ứng dụng không truy cập hộp thư, danh sách bạn bè, hồ sơ cá nhân hay
+        dữ liệu của người dùng Facebook.
+      </p>
+      <p>
+        Khi bạn chủ động nhắn tin hoặc bình luận, người quản lý Fanpage có thể đọc và trả lời trực tiếp
+        trên Facebook. Chúng tôi không tải nội dung đó ra ngoài nền tảng hay đưa vào Ứng dụng.
+      </p>
+
+      <h3>3.3. Cookie, analytics và quảng cáo</h3>
+      <p>
+        Trang chính sách này là trang tĩnh: không đặt cookie, không dùng công cụ analytics, không có
+        tracking pixel, không hiển thị quảng cáo và không tạo hồ sơ người dùng. Ứng dụng cũng không đặt
+        cookie trên trình duyệt của bất kỳ ai.
+      </p>
+    </section>
+
+    <section id="muc-dich">
+      <h2>4. Mục đích sử dụng dữ liệu</h2>
+      <p>Chúng tôi chỉ dùng dữ liệu nêu trên để:</p>
+      <ul>
+        <li>Đăng bài giới thiệu sản phẩm lên Fanpage của chính chúng tôi qua Meta Graph API.</li>
+        <li>Tạo caption tiếng Việt và ảnh minh họa cho sản phẩm.</li>
+        <li>Đếm số bài đã đăng trong ngày, tránh đăng trùng và giữ tần suất đăng hợp lý.</li>
+        <li>Bảo vệ Fanpage và tài khoản: phát hiện lỗi, thu hồi token khi cần.</li>
+      </ul>
+      <p>
+        Chúng tôi <strong>không</strong> bán, cho thuê, trao đổi hoặc chia sẻ dữ liệu với bên thứ ba
+        ngoài các nhà cung cấp dịch vụ kỹ thuật được liệt kê dưới đây. Chúng tôi không dùng dữ liệu để
+        tạo hồ sơ quảng cáo hay nhắm mục tiêu người dùng.
+      </p>
+    </section>
+
+    <section id="ben-thu-ba">
+      <h2>5. Nhà cung cấp bên thứ ba</h2>
+      <p>
+        Để vận hành, Ứng dụng gửi một số dữ liệu kỹ thuật tối thiểu tới các dịch vụ sau. Các dữ liệu này
+        là thông tin sản phẩm và nội dung bài đăng, <strong>không phải</strong> dữ liệu cá nhân của người xem.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nhà cung cấp</th>
+              <th>Mục đích</th>
+              <th>Dữ liệu gửi đi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meta Platforms<br>(Graph API)</td>
+              <td>Đăng bài và quản lý Fanpage</td>
+              <td>ID Fanpage, Page token, ảnh, caption, thời điểm đăng</td>
+            </tr>
+            <tr>
+              <td>DeepSeek<br>(api.deepseek.com)</td>
+              <td>Sinh caption tiếng Việt bằng AI</td>
+              <td>Tên, mô tả, giá và CTA của sản phẩm — không có dữ liệu cá nhân</td>
+            </tr>
+            <tr>
+              <td>Cloudflare<br>(Workers AI)</td>
+              <td>Sinh ảnh sản phẩm bằng AI</td>
+              <td>Câu mô tả ảnh (prompt) — không có dữ liệu cá nhân</td>
+            </tr>
+            <tr>
+              <td>Pollinations<br>(nếu được bật)</td>
+              <td>Sinh ảnh dự phòng</td>
+              <td>Câu mô tả ảnh (prompt) — không có dữ liệu cá nhân</td>
+            </tr>
+            <tr>
+              <td>Ollama<br>(nếu được bật)</td>
+              <td>Sinh caption cục bộ, không gửi ra ngoài</td>
+              <td>Không có — xử lý hoàn toàn trên máy</td>
+            </tr>
+            <tr>
+              <td>GitHub Pages</td>
+              <td>Lưu trữ trang chính sách này</td>
+              <td>GitHub có thể ghi log IP và User-Agent khi bạn truy cập, theo chính sách của GitHub</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Mỗi nhà cung cấp có chính sách quyền riêng tư riêng. Chúng tôi chỉ gửi lượng dữ liệu tối thiểu
+        cần thiết để hoàn thành từng bước.
+      </p>
+    </section>
+
+    <section id="luu-tru">
+      <h2>6. Lưu trữ và bảo mật</h2>
+      <ul>
+        <li>Toàn bộ dữ liệu vận hành nằm trên máy tính cá nhân của chủ cửa hàng. Chúng tôi
+          <strong>không</strong> vận hành máy chủ hay cơ sở dữ liệu trung tâm.</li>
+        <li>Page token được lưu trong tệp <code>.env</code>, đã loại khỏi Git bằng
+          <code>.gitignore</code> và không bao giờ được đưa vào mã nguồn công khai.</li>
+        <li>Máy tính được bảo vệ bằng mật khẩu hệ điều hành và chỉ chủ cửa hàng có quyền truy cập.</li>
+        <li>Khi phát hiện token bị lộ hoặc có truy cập bất thường, chúng tôi thu hồi quyền ứng dụng
+          trên Facebook và tạo token mới ngay lập tức.</li>
+      </ul>
+      <p>
+        Không có hệ thống nào an toàn tuyệt đối. Tuy nhiên, vì chúng tôi không lưu dữ liệu cá nhân của
+        khách hàng hay người xem, rủi ro đối với bạn được giữ ở mức tối thiểu.
+      </p>
+    </section>
+
+    <section id="thoi-gian-luu">
+      <h2>7. Thời gian lưu trữ</h2>
+      <ul>
+        <li><strong>Nhật ký đăng bài</strong> (<code>state/posts.jsonl</code>): giữ để đếm giới hạn
+          bài/ngày và tra cứu lịch sử; có thể xóa bất kỳ lúc nào.</li>
+        <li><strong>Dữ liệu sản phẩm</strong> (<code>products.yaml</code>): giữ cho đến khi cập nhật
+          hoặc xóa.</li>
+        <li><strong>Ảnh và caption</strong> (<code>output/</code>): giữ cho đến khi xóa thủ công.</li>
+        <li><strong>Token</strong>: giữ cho đến khi bạn thu hồi quyền ứng dụng trên Facebook hoặc xóa
+          tệp <code>.env</code>.</li>
+        <li><strong>Dữ liệu người dùng cuối</strong>: không lưu trữ.</li>
+      </ul>
+    </section>
+
+    <section id="xoa-du-lieu">
+      <h2>8. Quyền của bạn và cách xóa dữ liệu</h2>
+      <p>
+        Vì chúng tôi không lưu dữ liệu cá nhân của người xem, thông thường sẽ không có dữ liệu cá nhân
+        nào để truy cập, chỉnh sửa hoặc xóa. Nếu bạn cho rằng mình có dữ liệu trong hệ thống của chúng
+        tôi, hãy liên hệ theo mục 12; chúng tôi sẽ phản hồi trong vòng 30 ngày.
+      </p>
+      <h3>Nếu bạn là chủ tài khoản hoặc quản trị viên Fanpage</h3>
+      <ol>
+        <li><strong>Thu hồi quyền ứng dụng:</strong> trên Facebook, vào
+          <em>Cài đặt &amp; quyền riêng tư → Cài đặt → Ứng dụng và trang web</em>, tìm
+          “Auto Sữa Hạt” rồi chọn <em>Gỡ</em>.</li>
+        <li><strong>Xóa token cục bộ:</strong> xóa tệp <code>.env</code> trên máy tính.</li>
+        <li><strong>Xóa lịch sử đăng bài:</strong> xóa <code>state/posts.jsonl</code> và thư mục
+          <code>output/</code>.</li>
+        <li><strong>Yêu cầu qua kênh liên hệ:</strong> nhắn tin cho Fanpage hoặc mở issue trên
+          GitHub với tiêu đề “Yêu cầu xóa dữ liệu”.</li>
+      </ol>
+      <h3>Nếu bạn là người xem hoặc khách hàng</h3>
+      <p>
+        Bạn có thể xóa bình luận, tin nhắn hoặc tương tác của mình trực tiếp trên Facebook. Nếu cần
+        chúng tôi hỗ trợ, hãy liên hệ theo mục 12.
+      </p>
+      <p>
+        Bạn cũng có quyền khiếu nại tới cơ quan có thẩm quyền về bảo vệ dữ liệu cá nhân theo quy định
+        của pháp luật Việt Nam.
+      </p>
+    </section>
+
+    <section id="tre-em">
+      <h2>9. Trẻ em</h2>
+      <p>
+        Fanpage và Ứng dụng hướng tới người trưởng thành. Chúng tôi không cố ý thu thập dữ liệu cá nhân
+        của trẻ em dưới 13 tuổi, hoặc dưới 16 tuổi nếu pháp luật yêu cầu sự đồng ý của cha mẹ. Nếu bạn
+        cho rằng một trẻ em đã cung cấp dữ liệu cho chúng tôi, hãy liên hệ để chúng tôi xóa.
+      </p>
+    </section>
+
+    <section id="chuyen-du-lieu">
+      <h2>10. Chuyển dữ liệu ra nước ngoài</h2>
+      <p>
+        Một số nhà cung cấp dịch vụ (Meta, Cloudflare, GitHub, DeepSeek) có thể xử lý dữ liệu ngoài
+        lãnh thổ Việt Nam. Dữ liệu được gửi đi chỉ gồm thông tin sản phẩm và nội dung bài đăng,
+        không bao gồm dữ liệu cá nhân của người xem hay khách hàng.
+      </p>
+    </section>
+
+    <section id="thay-doi">
+      <h2>11. Thay đổi chính sách</h2>
+      <p>
+        Chúng tôi có thể cập nhật chính sách này khi thay đổi cách vận hành hoặc khi pháp luật yêu cầu.
+        Ngày cập nhật mới nhất luôn được ghi ở đầu trang. Thay đổi quan trọng sẽ được thông báo trên
+        Fanpage trước khi có hiệu lực.
+      </p>
+    </section>
+
+    <section id="lien-he">
+      <h2>12. Liên hệ</h2>
+      <p>Mọi câu hỏi, yêu cầu truy cập hoặc xóa dữ liệu, vui lòng liên hệ:</p>
+      <div class="contact-card">
+        <dl>
+          <div>
+            <dt>Đơn vị</dt>
+            <dd>Sữa Hạt Nhà Mình — Việt Nam</dd>
+          </div>
+          <div>
+            <dt>Kênh chính</dt>
+            <dd>Nhắn tin tới Fanpage Facebook “Sữa Hạt Nhà Mình”</dd>
+          </div>
+          <div>
+            <dt>Kênh dự phòng</dt>
+            <dd><a href="https://github.com/baonguyen1320/sua-hat-legal/issues">Mở yêu cầu trên GitHub Issues</a></dd>
+          </div>
+          <div>
+            <dt>Thời gian phản hồi</dt>
+            <dd>Trong vòng 30 ngày</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </article>
+
+  <!-- ================================ ENGLISH =============================== -->
+  <article lang="en" data-doc="en" hidden>
+    <div class="hero">
+      <p class="eyebrow">Sữa Hạt Nhà Mình · Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">
+        How the <strong>Auto Sữa Hạt</strong> app accesses, uses and protects data when publishing
+        posts to the Facebook Page of Sữa Hạt Nhà Mình.
+      </p>
+      <ul class="doc-meta">
+        <li>Last updated: 8 November 2026</li>
+        <li>Version 1.0</li>
+        <li>Applies to: the Page &amp; the Auto Sữa Hạt app</li>
+      </ul>
+    </div>
+
+    <div class="summary">
+      <h2>The 30-second summary</h2>
+      <ul>
+        <li>We use an internal tool to publish posts to <strong>our own</strong> Facebook Page.</li>
+        <li>We do not collect personal data from visitors, followers or customers.</li>
+        <li>No cookies, no analytics, and we never sell or share data for advertising.</li>
+        <li>Operational data stays on the shop owner's computer; tokens are kept private.</li>
+      </ul>
+    </div>
+
+    <section id="en-introduction">
+      <h2>1. Who we are</h2>
+      <p>
+        <strong>Sữa Hạt Nhà Mình</strong> (“we”, “us”) is a small food shop in Vietnam. We operate
+        the Facebook Page of the same name and an internal tool called <strong>Auto Sữa Hạt</strong>
+        (the “App”). The App generates product images and captions, then publishes a multi-image post
+        to our own Page through the Meta Graph API.
+      </p>
+      <p>
+        This policy explains how we access, use, store and protect data. We comply with Decree
+        13/2023/ND-CP on personal data protection (Vietnam) and the Meta Platform Terms.
+      </p>
+    </section>
+
+    <section id="en-scope">
+      <h2>2. Scope</h2>
+      <p>This policy applies to:</p>
+      <ul>
+        <li>The Facebook Page <strong>Sữa Hạt Nhà Mình</strong> and its posts.</li>
+        <li>The Auto Sữa Hạt App, running locally on the shop owner's computer.</li>
+        <li>This policy page and the technical data generated when you visit it.</li>
+      </ul>
+      <p>
+        It does not apply to third-party websites, apps or services that we do not control, including
+        the platforms listed below.
+      </p>
+    </section>
+
+    <section id="en-data">
+      <h2>3. Data we process</h2>
+
+      <h3>3.1. Page data that we manage</h3>
+      <ul>
+        <li><strong>Page ID and name</strong> — to identify the right Page to publish to.</li>
+        <li><strong>Page access token</strong> — a credential issued by Meta, stored locally in
+          <code>.env</code>, never published or shared.</li>
+        <li><strong>Posting ledger</strong> — post IDs, timestamps, status, uploaded photo IDs
+          and the product list for each post, stored in <code>state/posts.jsonl</code> to
+          enforce daily limits and prevent duplicates.</li>
+        <li><strong>Product content</strong> — names, ingredients, prices, descriptions and calls to
+          action that we write ourselves in <code>products.yaml</code>.</li>
+        <li><strong>Product photos</strong> — created or owned by us, stored in
+          <code>output/images/</code>.</li>
+      </ul>
+
+      <h3>3.2. Visitor and customer data</h3>
+      <div class="callout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p>
+          The App does <strong>not</strong> read, collect or store personal data of Page visitors,
+          followers, commenters or people who message the Page.
+        </p>
+      </div>
+      <p>
+        Interactions such as comments, reactions, shares and messages take place on Facebook and are
+        governed by Meta's policies. The App requests only two permissions:
+        <code>pages_manage_posts</code> (publish posts) and <code>pages_read_engagement</code> (read
+        public Page information). It does not access inboxes, friend lists, personal profiles or
+        Facebook users' data.
+      </p>
+      <p>
+        When you message or comment, the Page's administrators may read and reply directly on
+        Facebook. We do not export that content or feed it into the App.
+      </p>
+
+      <h3>3.3. Cookies, analytics and advertising</h3>
+      <p>
+        This policy page is static: it sets no cookies, uses no analytics, contains no tracking
+        pixels, shows no ads and builds no user profiles. The App sets no cookies in anyone's browser.
+      </p>
+    </section>
+
+    <section id="en-purposes">
+      <h2>4. How we use data</h2>
+      <p>We use the data described above only to:</p>
+      <ul>
+        <li>Publish product posts to our own Page through the Meta Graph API.</li>
+        <li>Generate Vietnamese captions and product images.</li>
+        <li>Count posts published per day, avoid duplicates and keep a reasonable posting cadence.</li>
+        <li>Protect the Page and account: detect errors and revoke tokens when needed.</li>
+      </ul>
+      <p>
+        We do <strong>not</strong> sell, rent, trade or share data with third parties other than the
+        technical providers listed below. We do not use data for ad profiling or targeting.
+      </p>
+    </section>
+
+    <section id="en-third-parties">
+      <h2>5. Third-party providers</h2>
+      <p>
+        To operate, the App sends a minimal amount of technical data to the following services. That
+        data consists of product information and post content, <strong>not</strong> visitors' personal
+        data.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Data sent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meta Platforms<br>(Graph API)</td>
+              <td>Publishing and Page management</td>
+              <td>Page ID, Page token, images, captions, publish time</td>
+            </tr>
+            <tr>
+              <td>DeepSeek<br>(api.deepseek.com)</td>
+              <td>AI-generated Vietnamese captions</td>
+              <td>Product names, descriptions, prices and CTA — no personal data</td>
+            </tr>
+            <tr>
+              <td>Cloudflare<br>(Workers AI)</td>
+              <td>AI-generated product images</td>
+              <td>Image description prompts — no personal data</td>
+            </tr>
+            <tr>
+              <td>Pollinations<br>(if enabled)</td>
+              <td>Fallback image generation</td>
+              <td>Image description prompts — no personal data</td>
+            </tr>
+            <tr>
+              <td>Ollama<br>(if enabled)</td>
+              <td>Local caption generation, no external transfer</td>
+              <td>None — processed entirely on the machine</td>
+            </tr>
+            <tr>
+              <td>GitHub Pages</td>
+              <td>Hosting this policy page</td>
+              <td>GitHub may log IP address and User-Agent when you visit, under GitHub's policy</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Each provider has its own privacy policy. We send only the minimum data required for each
+        step.
+      </p>
+    </section>
+
+    <section id="en-storage">
+      <h2>6. Storage and security</h2>
+      <ul>
+        <li>All operational data lives on the shop owner's personal computer. We do
+          <strong>not</strong> run a server or a central database.</li>
+        <li>The Page token is stored in <code>.env</code>, excluded from Git via
+          <code>.gitignore</code>, and never committed to public source code.</li>
+        <li>The computer is protected by an operating-system password, and only the shop owner has
+          access.</li>
+        <li>If a token is exposed or unusual access is detected, we revoke the app's permissions on
+          Facebook and issue a new token immediately.</li>
+      </ul>
+      <p>
+        No system is perfectly secure. However, because we do not store personal data of customers or
+        visitors, the risk to you is kept to a minimum.
+      </p>
+    </section>
+
+    <section id="en-retention">
+      <h2>7. Retention</h2>
+      <ul>
+        <li><strong>Posting ledger</strong> (<code>state/posts.jsonl</code>): kept to enforce daily
+          limits and review history; it can be deleted at any time.</li>
+        <li><strong>Product data</strong> (<code>products.yaml</code>): kept until updated or
+          deleted.</li>
+        <li><strong>Images and captions</strong> (<code>output/</code>): kept until manually
+          deleted.</li>
+        <li><strong>Token</strong>: kept until you remove the app on Facebook or delete the
+          <code>.env</code> file.</li>
+        <li><strong>End-user data</strong>: not retained.</li>
+      </ul>
+    </section>
+
+    <section id="en-data-deletion">
+      <h2>8. Your rights and data deletion</h2>
+      <p>
+        Because we do not store personal data of visitors, there is generally no personal data to
+        access, correct or delete. If you believe we hold data about you, contact us under section 12
+        and we will respond within 30 days.
+      </p>
+      <h3>If you are the account or Page owner</h3>
+      <ol>
+        <li><strong>Revoke app access:</strong> on Facebook, go to
+          <em>Settings &amp; privacy → Settings → Apps and websites</em>, find “Auto Sữa Hạt” and
+          select <em>Remove</em>.</li>
+        <li><strong>Delete the local token:</strong> delete the <code>.env</code> file on the
+          computer.</li>
+        <li><strong>Delete posting history:</strong> delete <code>state/posts.jsonl</code> and the
+          <code>output/</code> folder.</li>
+        <li><strong>Request via the contact channel:</strong> message the Page or open a GitHub
+          issue titled “Data deletion request”.</li>
+      </ol>
+      <h3>If you are a visitor or customer</h3>
+      <p>
+        You can delete your comments, messages or interactions directly on Facebook. If you need our
+        help, contact us under section 12.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with the competent authority for personal data
+        protection under Vietnamese law.
+      </p>
+    </section>
+
+    <section id="en-children">
+      <h2>9. Children</h2>
+      <p>
+        The Page and the App are intended for adults. We do not knowingly collect personal data from
+        children under 13, or under 16 where parental consent is required by law. If you believe a
+        child has provided data to us, please contact us so we can delete it.
+      </p>
+    </section>
+
+    <section id="en-international">
+      <h2>10. International transfers</h2>
+      <p>
+        Some providers (Meta, Cloudflare, GitHub, DeepSeek) may process data outside Vietnam. The
+        data sent consists only of product information and post content, not visitors' or customers'
+        personal data.
+      </p>
+    </section>
+
+    <section id="en-changes">
+      <h2>11. Changes to this policy</h2>
+      <p>
+        We may update this policy when our operations change or when required by law. The latest
+        revision date is always shown at the top of this page. Material changes will be announced on
+        the Page before they take effect.
+      </p>
+    </section>
+
+    <section id="en-contact">
+      <h2>12. Contact</h2>
+      <p>For any questions, access requests or deletion requests, please contact:</p>
+      <div class="contact-card">
+        <dl>
+          <div>
+            <dt>Entity</dt>
+            <dd>Sữa Hạt Nhà Mình — Vietnam</dd>
+          </div>
+          <div>
+            <dt>Primary channel</dt>
+            <dd>Message the “Sữa Hạt Nhà Mình” Facebook Page</dd>
+          </div>
+          <div>
+            <dt>Fallback</dt>
+            <dd><a href="https://github.com/baonguyen1320/sua-hat-legal/issues">Open a request on GitHub Issues</a></dd>
+          </div>
+          <div>
+            <dt>Response time</dt>
+            <dd>Within 30 days</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="page-footer">
+  <div class="wrap">
+    <span>© 2026 Sữa Hạt Nhà Mình · Chính sách quyền riêng tư / Privacy Policy</span>
+    <a class="to-top" href="#main">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+      <span data-label-vi>Lên đầu trang</span><span data-label-en hidden>Back to top</span>
+    </a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var docs = document.querySelectorAll('[data-doc]');
+  var buttons = document.querySelectorAll('[data-lang]');
+  var topLabels = document.querySelectorAll('.to-top [data-label-vi], .to-top [data-label-en]');
+  var titles = {
+    vi: 'Chính sách quyền riêng tư — Sữa Hạt Nhà Mình',
+    en: 'Privacy Policy — Sữa Hạt Nhà Mình'
+  };
+
+  function setLang(lang, persist) {
+    lang = lang === 'en' ? 'en' : 'vi';
+
+    docs.forEach(function (doc) {
+      doc.hidden = doc.getAttribute('data-doc') !== lang;
+    });
+    buttons.forEach(function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang') === lang));
+    });
+    topLabels.forEach(function (label) {
+      label.hidden = (label.hasAttribute('data-label-vi') ? 'vi' : 'en') !== lang;
+    });
+
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+
+    if (persist) {
+      try { localStorage.setItem('shnm-privacy-lang', lang); } catch (e) {}
+      var suffix = lang === 'en' ? '?lang=en' : '';
+      try {
+        history.replaceState(null, '', location.pathname + suffix + location.hash);
+      } catch (e) {}
+    }
+  }
+
+  var initial = 'vi';
+  try {
+    var saved = localStorage.getItem('shnm-privacy-lang');
+    if (saved === 'vi' || saved === 'en') initial = saved;
+  } catch (e) {}
+  var param = new URLSearchParams(location.search).get('lang');
+  if (param === 'vi' || param === 'en') initial = param;
+
+  setLang(initial, false);
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLang(btn.getAttribute('data-lang'), true);
+    });
+  });
+
+  // A data-deletion link may point at the Vietnamese anchor while English is shown.
+  if (initial === 'en' && location.hash === '#xoa-du-lieu') {
+    var target = document.getElementById('en-data-deletion');
+    if (target) target.scrollIntoView();
+  }
+})();
+</script>
+</body>
+</html>
